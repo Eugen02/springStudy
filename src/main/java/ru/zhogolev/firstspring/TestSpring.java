@@ -7,10 +7,13 @@ public class TestSpring {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
         );
-      Music testBean = context.getBean("musicBean",Music.class);
+        //  Music testBean = context.getBean("musicBean",Music.class);
+        //  MusicPlayer musicPlayer = new MusicPlayer(testBean);
 
-      MusicPlayer musicPlayer = new MusicPlayer(testBean);
-      musicPlayer.playMusic();
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+
+        musicPlayer.playMusic();
+        System.out.println(musicPlayer.toString());
         context.close();
     }
 }
