@@ -28,18 +28,20 @@
                 <ref bean="musicBean2"/>
             </list>
         </property>
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 
 
-<!--    <bean id="musicPlayer"-->           MANY PAR IN CONSTR
+<!--    <bean id="musicPlayer"           MANY PAR IN CONSTR -->
 <!--          class="ru.zhogolev.firstspring.MusicPlayer">-->
 <!--        <constructor-arg ref="musicBean" />-->
 <!--        <constructor-arg ref="musicBean1" />-->
 <!--        <constructor-arg ref="musicBean2" />-->
 <!--    </bean>-->
 
-<!--    <bean id="musicPlayer"-->               PROPERTIES
-<!--          class="ru.zhogolev.firstspring.MusicPlayer">-->
+<!--    <bean id="musicPlayer"              PROPERTIES -->
+    <!--          class="ru.zhogolev.firstspring.MusicPlayer">-->
 <!--        <property name="music" ref="musicBean"/>-->
 <!--        <property name="name" value="${musicPlayer.name}"/>-->
 <!--        <property name="volume" value="${musicPlayer.volume}"/>-->
