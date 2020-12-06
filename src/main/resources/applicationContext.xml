@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans  xmlns="http://www.springframework.org/schema/beans"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:context="http://www.springframework.org/schema/context"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
  http://www.springframework.org/schema/beans/spring-beans.xsd
  http://www.springframework.org/schema/context
  http://www.springframework.org/schema/context/spring-context.xsd">
@@ -10,47 +10,52 @@
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="musicBean"
-          class="ru.zhogolev.firstspring.ClassicalMusic">
-    </bean>
-    <bean id="musicBean1"
-          class="ru.zhogolev.firstspring.RockMusic">
-    </bean>
-    <bean id="musicBean2"
-          class="ru.zhogolev.firstspring.LofiMusic">
-    </bean>
-
-    <bean id="musicPlayer"
-          class="ru.zhogolev.firstspring.MusicPlayer">
-        <property name="musicList">
-            <list>
-                <ref bean="musicBean"/>
-                <ref bean="musicBean1"/>
-                <ref bean="musicBean2"/>
-            </list>
-        </property>
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
+          class="ru.zhogolev.firstspring.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getClassicalMusic">
     </bean>
 
 
-<!--    <bean id="musicPlayer"           MANY PAR IN CONSTR -->
-<!--          class="ru.zhogolev.firstspring.MusicPlayer">-->
-<!--        <constructor-arg ref="musicBean" />-->
-<!--        <constructor-arg ref="musicBean1" />-->
-<!--        <constructor-arg ref="musicBean2" />-->
-<!--    </bean>-->
+    <!--    <bean id="musicBean1"-->
+    <!--          class="ru.zhogolev.firstspring.RockMusic">-->
+    <!--    </bean>-->
+    <!--    <bean id="musicBean2"-->
+    <!--          class="ru.zhogolev.firstspring.LofiMusic">-->
+    <!--    </bean>-->
 
-<!--    <bean id="musicPlayer"              PROPERTIES -->
+    <!--    <bean id="musicPlayer"                             FOR SELF STUDY-->
     <!--          class="ru.zhogolev.firstspring.MusicPlayer">-->
-<!--        <property name="music" ref="musicBean"/>-->
-<!--        <property name="name" value="${musicPlayer.name}"/>-->
-<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
-<!--    </bean>-->
+    <!--        <property name="musicList">-->
+    <!--            <list>-->
+    <!--                <ref bean="musicBean"/>-->
+    <!--                <ref bean="musicBean1"/>-->
+    <!--                <ref bean="musicBean2"/>-->
+    <!--            </list>-->
+    <!--        </property>-->
+    <!--        <property name="name" value="${musicPlayer.name}"/>-->
+    <!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+    <!--    </bean>-->
 
 
-<!--    <bean id="musicPlayer"-->
-<!--          class="ru.zhogolev.firstspring.MusicPlayer">-->
-<!--        <constructor-arg ref="musicBean" />-->
-<!--    </bean>-->
+    <!--    <bean id="musicPlayer"           MANY PAR IN CONSTR -->
+    <!--          class="ru.zhogolev.firstspring.MusicPlayer">-->
+    <!--        <constructor-arg ref="musicBean" />-->
+    <!--        <constructor-arg ref="musicBean1" />-->
+    <!--        <constructor-arg ref="musicBean2" />-->
+    <!--    </bean>-->
+
+    <!--    <bean id="musicPlayer"              PROPERTIES -->
+    <!--          class="ru.zhogolev.firstspring.MusicPlayer">-->
+    <!--        <property name="music" ref="musicBean"/>-->
+    <!--        <property name="name" value="${musicPlayer.name}"/>-->
+    <!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+    <!--    </bean>-->
+
+
+    <!--    <bean id="musicPlayer"-->
+    <!--          class="ru.zhogolev.firstspring.MusicPlayer">-->
+    <!--        <constructor-arg ref="musicBean" />-->
+    <!--    </bean>-->
 
 </beans>
