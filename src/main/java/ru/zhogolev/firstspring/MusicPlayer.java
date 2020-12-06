@@ -1,16 +1,20 @@
 package ru.zhogolev.firstspring;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MusicPlayer {
- Music music;
+    private ClassicalMusic classicalMusic;
     //IoC
-    public MusicPlayer(Music music) {
-        this.music=music;
+    @Autowired
+    public MusicPlayer(ClassicalMusic classicalMusic) {
+        this.classicalMusic=classicalMusic;
     }
     public MusicPlayer() {}
 
     public void playMusic(){
-            System.out.println("Music Play = " + music.getSong());
+            System.out.println("Music Play = " + classicalMusic.getSong());
     }
 
 }
