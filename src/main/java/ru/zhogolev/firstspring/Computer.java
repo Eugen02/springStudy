@@ -18,7 +18,7 @@ private MusicPlayer musicPlayer;
     public String toString() {
         return "Computer{" +
                 "id=" + id + System.lineSeparator() +
-                ", " + musicPlayer.playMusic()+
+                ", " + musicPlayer.playMusic(Ganr.ROCK)+
                 '}';
     }
 }

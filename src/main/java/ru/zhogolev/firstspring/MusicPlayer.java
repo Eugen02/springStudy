@@ -1,6 +1,7 @@
 package ru.zhogolev.firstspring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -27,24 +28,33 @@ public class MusicPlayer {
 //    @Autowired                            AW FROM PARR
 //    Music music;
 //
+//
+//    @Autowired
+//    @Qualifier("classicalMusic")
+//    Music music;
 
-    ClassicalMusic classicalMusic;
-    RockMusic rockMusic;
+    private Music music1;
+    private Music music2;
+
     @Autowired
-    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
-        this.classicalMusic = classicalMusic;
-        this.rockMusic = rockMusic;
+    public MusicPlayer(@Qualifier("classicalMusic") Music music1, @Qualifier("rockMusic") Music music2) {
+        this.music1 = music1;
+        this.music2 = music2;
     }
 
     public MusicPlayer() {
     }
 
-    public String playMusic() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Music Play = ").append(classicalMusic.getSong())
-                .append(System.lineSeparator())
-                .append("Music Play = ").append(rockMusic.getSong());
-      return sb.toString();
+    public String playMusic(Ganr enums) {
+        if (Ganr.CLASSICAL == enums) {
+            return String.valueOf(music1.getSong());
+        }
+
+        if (Ganr.ROCK == enums) {
+            return String.valueOf(music2.getSong());
+        }
+
+        return "It's can't be";
     }
 
 }
