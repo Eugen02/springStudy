@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
 public class RockMusic implements Music {
 
     List<String> musicList = new ArrayList<>();
@@ -15,8 +14,5 @@ public class RockMusic implements Music {
     }
     @Override
     public String getSong() {
-        musicList.add("firstRockMusic");
-        musicList.add("secondRockMusic");
-        musicList.add("thirdRockMusic");
-        return musicList.get(random1());
+        return "Rock MUSIC";
     }}

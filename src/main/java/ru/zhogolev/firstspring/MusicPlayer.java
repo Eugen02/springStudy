@@ -4,7 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component
+import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class MusicPlayer {
 //    private ClassicalMusic classicalMusic;
 //    //IoC
@@ -36,25 +40,23 @@ public class MusicPlayer {
     private Music music1;
     private Music music2;
 
-    @Autowired
     public MusicPlayer(@Qualifier("classicalMusic") Music music1, @Qualifier("rockMusic") Music music2) {
         this.music1 = music1;
         this.music2 = music2;
     }
 
-    public MusicPlayer() {
+    public MusicPlayer(List<Music> musicList) {
+        this.musicList = musicList;
     }
 
-    public String playMusic(Ganr enums) {
-        if (Ganr.CLASSICAL == enums) {
-            return String.valueOf(music1.getSong());
-        }
+    public List<Music> musicList = new ArrayList<>();
 
-        if (Ganr.ROCK == enums) {
-            return String.valueOf(music2.getSong());
-        }
 
-        return "It's can't be";
+
+
+    public String playMusic() {
+        Random random = new SecureRandom();
+        return musicList.get(random.nextInt(musicList.size())).getSong();
     }
 
 }

@@ -17,8 +17,6 @@ O
 src/main/webapp/WEB-INF/web.xml,2\e\2e22b6edd746fa3dc40ad7276c87c8d87d72a392
 d
 4src/main/java/ru/zhogolev/firstspring/LofiMusic.java,1\d\1dadd95ed16378d0bcf0dc98865ca623d9e19a3e
-Y
-)src/main/resources/applicationContext.xml,9\d\9dd7737cba2b01f9d000df326fa8044082d0950d
 c
 3src/main/java/ru/zhogolev/firstspring/Computer.java,a\2\a29799d6e23210a70c5e49aa26d2fb92ddd0f9d0
 _

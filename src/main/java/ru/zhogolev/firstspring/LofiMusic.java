@@ -11,9 +11,6 @@ public class LofiMusic implements Music {
     }
     @Override
     public String getSong() {
-        musicList.add("firstLofiMusic");
-        musicList.add("secondLofiMusic");
-        musicList.add("thirdLofiMusic");
-        return musicList.get(random1());
+        return "Lofi MUSIC";
     }
 }
