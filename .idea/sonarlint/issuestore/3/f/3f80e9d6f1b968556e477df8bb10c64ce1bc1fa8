@@ -1,3 +1,11 @@
 
-X	java:S125"<This block of commented-out lines of code should be removed.(ñÄØ°8‹Ø”ìã.
-X	java:S125	"<This block of commented-out lines of code should be removed.( ş‰Ê8‹Ø”ìã.
+X	java:S125"<This block of commented-out lines of code should be removed.( ş‰Ê8æâ¹õã.
+r
+java:S11044"UMake musicList a static final constant or non-public and provide accessors if needed.(ìıÅ÷8†éÅõã.
+L
+java:S1068)"*Remove this unused "music2" private field.(÷œÙôıÿÿÿÿ8ßÂÇõã.
+F
+java:S1068("*Remove this unused "music1" private field.(Çß»V8ßÂÇõã.
+g
+java:S1128"ERemove this unused import 'org.springframework.stereotype.Component'.(Ş÷Ñ¸ÿÿÿÿÿ8Äù»õã.
+X	java:S125"<This block of commented-out lines of code should be removed.(ñÄØ°8æâ¹õã.

@@ -21,3 +21,8 @@ c
 3src/main/java/ru/zhogolev/firstspring/Computer.java,a\2\a29799d6e23210a70c5e49aa26d2fb92ddd0f9d0
 _
 /src/main/java/ru/zhogolev/firstspring/Ganr.java,5\5\55bff7fc2a4d0339a21060121ac47ab58679f6c5
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+g
+7src/main/java/ru/zhogolev/firstspring/SpringConfig.java,0\1\014db3a387997f43c8d626cc5ba09f55c8b96200
